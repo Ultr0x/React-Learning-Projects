@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import Navbar from "./components/Navbar"
+import Hero from "./components/Hero"
+import Card from "./components/Card"
+import data from "./data"
+/*
+Challenge:
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+- import the array of data from data.js
+- map over the array to create <Card /> components
+- display the array of card components under the navbar
+  (in place of the current <Card /> component)
+
+Note: We haven't styled the group of components yet, so they'll
+still be block elements, stacked vertically. We'll add styling later.
+*/
+
+export default function App() {
+    const cards = data.map(item => {
+      return (
+        <Card
+          key={item.id}//this is a unique identifier for each card component that React needs to keep track of the components
+          coverImg={item.coverImg}
+          rating={item.stats.rating}
+          reviewCount={item.stats.reviewCount}
+          location={item.location}
+          title={item.title}
+          price={item.price}
+        />  
+      )
+    })
+    return (
+        <div>
+            <Navbar />
+            <Hero />
+            <section className="cards-list">
+                {cards}
+            </section>
+        </div>
+    )
 }
-
-export default App;
