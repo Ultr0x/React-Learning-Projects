@@ -16,19 +16,16 @@ still be block elements, stacked vertically. We'll add styling later.
 */
 
 export default function App() {
+  // map over the array of data and return a new array of <Card /> components
     const cards = data.map(item => {
       return (
         <Card
           key={item.id}//this is a unique identifier for each card component that React needs to keep track of the components
-          coverImg={item.coverImg}
-          rating={item.stats.rating}
-          reviewCount={item.stats.reviewCount}
-          location={item.location}
-          title={item.title}
-          price={item.price}
+          {...item}
         />  
       )
     })
+
     return (
         <div>
             <Navbar />
