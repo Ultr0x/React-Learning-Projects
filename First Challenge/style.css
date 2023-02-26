@@ -1,0 +1,51 @@
+
+/* .nav-items horizontal items */
+.nav-items {
+    font-family: "Lucida Console", "Courier New", monospace;
+    list-style: none;
+    display: flex;
+    
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    z-index: 999;
+    top: -10px;
+    box-shadow: 10px 10px 10px 5px rgba(0,0,0,0.7);
+}
+.nav-items >li{
+    padding: 0 1rem;
+}
+li:not(:last-child) {
+    margin-bottom: 5px;
+}
+/* nav-logo class */
+.nav-logo{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+.heading {
+    font-family: "Lucida Console", "Courier New", monospace;
+    list-style: none;
+    display: flex;
+}
+.main-items {
+    font-family: "Lucida Console", "Courier New", monospace;
+    min-height: 100vh;
+    list-style: square;
+    flex-direction: column;
+}
+.footer{
+    font-family: "Lucida Console", "Courier New", monospace;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    position: absolute;
+    right: 0;
+    box-shadow: 10px 10px 10px 5px rgba(0,0,0,0.7);
+    
+}
